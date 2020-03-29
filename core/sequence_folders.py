@@ -214,10 +214,7 @@ class SequenceFolder(torch.utils.data.Dataset):
         name: 2011_09_26_...._sync_02 01.jpg\n
 
         """
-        if split == 'train':
-            #self.example_names = [self.root + name.split('\n')[0].split(' ')[0] + '/' + name.split('\n')[0].split(' ')[1] for name in open('{}{}.txt'.format(self.root, 'train_lsd'))]
-        
-            self.example_names = [self.root + name.split('\n')[0].split(' ')[0] + '/' + name.split('\n')[0].split(' ')[1] for name in open('{}{}.txt'.format(self.root, self.split))]
+        self.example_names = [self.root + name.split('\n')[0].split(' ')[0] + '/' + name.split('\n')[0].split(' ')[1] for name in open('{}{}.txt'.format(self.root, self.split))]
         self.example_names = sorted(self.example_names)
         #random.shuffle(self.example_names)
 
